@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box
+}
+
+
+
+    .tabMenu {
+
+
+        .container {
+
+            .tab {
+                display: block;
+                align-items: center;
+                float: left;
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+                width: 30%;
+                height: 100vh;
+                padding-top: 80px;
+
+                img {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: 20px;
+                    align-items: center;
+                    width: 50%;
+                    border-radius: 50%;
+                }
+
+                button {
+                    display: block;
+                    background-color: inherit;
+                    color: black;
+                    padding: 22px 16px;
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    text-align: center;
+                    cursor: pointer;
+                    transition: 0.3s;
+
+                    &:hover {
+                        background-color: #ddd;
+                    }
+
+                    &:active {
+                        background-color: #dd0f0f;
+                    }
+
+                    i {
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+
+
+            .tabcontent {
+                float: left;
+                padding: 0px 12px;
+                border: 1px solid #ccc;
+                width: 70%;
+                border-left: none;
+                height: 100vh;
+                text-align: center;
+                align-items: center;
+
+
+                .title {
+                    display: block;
+                    text-align: start;
+                    padding: 40px 0 40px 0;
+                }
+            }
+
+            .signoutcontent {
+                display: none;
+            }
+
+            .formInput {
+
+
+                .forminfo {
+                    text-align: start;
+                    padding-bottom: 40px;
+
+
+                    .firstname {
+                        grid-area: fname;
+                        margin-right: 20px;
+                    }
+
+                    .lastname {
+                        grid-area: lname;
+                    }
+
+                    .email {
+                        grid-area: email;
+                        margin-right: 20px;
+                    }
+
+                    .phonenumber {
+                        grid-area: phone;
+                    }
+
+                    .Bio {
+                        grid-area: Bio;
+
+                        textarea {
+                            width: 100%;
+                            border-radius: 15px;
+                            padding: 10px;
+                        }
+                    }
+
+                    display: grid;
+                    grid-template-areas:
+                        'fname lname'
+                        'email phone'
+                        'Bio Bio';
+                    grid-template-columns: auto auto;
+                    grid-template-rows: auto auto auto;
+
+                    input {
+                        width: 100%;
+                        border-radius: 15px;
+                        padding: 10px;
+                    }
+                }
+
+                .btn {
+                    display: flex;
+                    justify-content: start;
+                    align-items: start;
+                    margin-bottom: 40px;
+
+                    button {
+                        width: max-content;
+                        padding: 10px 20px 10px 20px;
+                        border-radius: 10px;
+                        margin: 10px;
+                        border-color: transparent;
+                    }
+                }
+
+                .Adressform {
+                    padding: 40px 0 40px 0;
+                    border-top: rgb(212, 211, 211) 1px solid;
+
+
+                    .AdressInfo {
+                        text-align: start;
+                        padding-bottom: 40px;
+
+                        .Adress1 {
+                            grid-area: Adress1;
+                        }
+
+                        .Adress2 {
+                            grid-area: Adress2;
+                        }
+
+                        .Postal {
+                            grid-area: Postal;
+                            margin-right: 20px;
+                        }
+
+                        .City {
+                            grid-area: City;
+                        }
+
+                        display: grid;
+                        grid-template-areas:
+                            'Adress1 Adress1' 'Adress2 Adress2' 'Postal City';
+                        grid-template-columns: auto auto;
+                        grid-template-rows: auto auto auto;
+
+                        input {
+                            width: 100%;
+                            border-radius: 15px;
+                            padding: 10px;
+                            margin: 10px 0 10px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+

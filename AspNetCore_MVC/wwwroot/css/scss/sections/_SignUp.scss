@@ -1,0 +1,87 @@
+
+
+    .SignupTitle {
+
+        .container {
+            display: block;
+            text-align: center;
+        }
+    }
+
+
+
+    .Signupform {
+
+
+        .container {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+
+
+
+            .forminfo {
+                text-align: start;
+                padding: 40px;
+                width: 750px;
+                display: grid;
+                grid-template-areas:
+                    "FirstName LastName" 
+                    "Email Email" "PassW PassW" 
+                    "PassWR PassWR" 
+                    "Checkbox Checkbox" 
+                    "SignupBtn SignupBtn";
+                grid-template-columns: auto auto;
+                grid-auto-rows: auto auto auto auto auto auto;
+
+                .First {
+                    grid-area: FirstName;
+                    padding-right: 20px;
+                }
+
+                .Last {
+                    grid-area: LastName;
+                }
+
+                .Email {
+                    grid-area: Email;
+                }
+
+                .PassW {
+                    grid-area: PassW;
+                }
+
+                .PassWR {
+                    grid-area: PassWR;
+                }
+
+                .remember {
+                    grid-area: Checkbox;
+
+                    input {
+                        width: 30px;
+                    }
+                }
+
+                .btnSignup {
+                    grid-area: SignupBtn;
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 30px;
+                    width: 100%;
+                }
+
+
+
+
+                input {
+                    border-radius: 10px;
+                    padding: 15px;
+                    margin: 10px 0 30px 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+

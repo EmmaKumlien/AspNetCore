@@ -1,0 +1,29 @@
+footer {
+    padding: 50px 0 30px 0;
+    @include text-m;
+    color: $gray-600;
+
+    .container {
+        width:100%;
+        text-align: center;
+
+        @include xl
+        {
+            width:50%;
+        }
+        .social-media {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        span{
+            display:none;
+
+            @include md{
+                display: inline;
+            }
+        }
+    }
+}

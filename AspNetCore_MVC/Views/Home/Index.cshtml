@@ -1,0 +1,24 @@
+﻿
+@model HomeIndexViewModel
+
+
+@await Html.PartialAsync("~/Views/Shared/Sections/Home/_ShowcasePartial.cshtml", Model.Showcase)
+
+
+@await Html.PartialAsync("~/Views/Shared/Sections/Home/_ToolBoxPartial.cshtml")
+@await Html.PartialAsync("~/Views/Shared/Sections/Home/_SwitchThemePartial.cshtml")
+
+<div id="Manage">
+	@await Html.PartialAsync("~/Views/Shared/Sections/Home/_ManageWorkPartial.cshtml")
+</div>
+
+@await Html.PartialAsync("~/Views/Shared/Sections/Home/_DownloadPartial.cshtml")
+@await Html.PartialAsync("~/Views/Shared/Sections/Home/_WorkToolsPartial.cshtml")
+
+<div id="Subscribe">
+	@await Html.PartialAsync("~/Views/Shared/Sections/Home/_SubscribePartial.cshtml")
+</div>
+
+
+@* <partial name="~/Views/Shared/Sections/Home/_SubscribePartial.cshtml" /> *@
+

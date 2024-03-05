@@ -1,0 +1,45 @@
+
+
+    .SigninTilte {
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .signinform {
+
+        .container {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            justify-content: center;
+            text-align: center;
+
+            .logIn {
+                display: block;
+                text-align: start;
+                font-size: large;
+                padding-bottom: 20px;
+
+
+
+                input {
+                    width: 30dvh;
+                    padding: 15px;
+                    margin-top: 20px;
+                }
+            }
+
+            #remember {
+                text-align: start;
+            }
+
+            .signinbtn {
+                display: flex;
+                justify-content: space-evenly;
+                margin: 40px 0 40px 0;
+            }
+        }
+    }
+
