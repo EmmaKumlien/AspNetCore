@@ -1,15 +1,7 @@
-﻿@{
-    bool hideSocial = false;
-
-    if (Context.Request.Path.Value!.Equals("/signin") || Context.Request.Path.Value!.Equals("/signup"))
-    {
-        hideSocial = true;
-    }
-}
-
+﻿
 <footer>
     <div class="container">
-        <div class="@(hideSocial ? "d-none social-media" : "social-media")">
+        <div class="@(ViewContext.RouteData.Values["Controller"]!.ToString() == "Account" ? "d-none social-media" : "social-media")">
             <a class="btn-social" href="#"> <i class="fa-brands fa-square-facebook"></i></a>
             <a class="btn-social" href="#"> <i class="fa-brands fa-square-x-twitter"></i></a>
             <a class="btn-social" href="#"> <i class="fa-brands fa-instagram"></i></a>
