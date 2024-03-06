@@ -1,0 +1,20 @@
+﻿@{
+    bool hideSocial = false;
+
+    if (Context.Request.Path.Value!.Equals("/signin") || Context.Request.Path.Value!.Equals("/signup"))
+    {
+        hideSocial = true;
+    }
+}
+
+<footer>
+    <div class="container">
+        <div class="@(hideSocial ? "d-none social-media" : "social-media")">
+            <a class="btn-social" href="#"> <i class="fa-brands fa-square-facebook"></i></a>
+            <a class="btn-social" href="#"> <i class="fa-brands fa-square-x-twitter"></i></a>
+            <a class="btn-social" href="#"> <i class="fa-brands fa-instagram"></i></a>
+            <a class="btn-social" href="#"> <i class="fa-brands fa-square-youtube"></i></a>
+        </div>
+        <p> &copy; @DateTime.Now.Year Silicon. All rights reserved. <span>Pulvinar urna condimentum amet tempor, ornare integer. Lorem odio justo malesuada suspendisse viverra aliquet quisque turpis non. Feugiat in odio non nunc ornare consectetur.</span></p>
+    </div>
+</footer>
