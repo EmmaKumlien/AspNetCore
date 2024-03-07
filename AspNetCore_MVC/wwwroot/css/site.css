@@ -893,35 +893,62 @@ header .container .btn-mobile {
   display: block;
 }
 
-.SigninTilte .container {
+#signin {
+  height: 100%;
+}
+#signin .container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100%;
+  border: 1px solid red;
 }
-
-.signinform .container {
+@media (min-width: 992px) {
+  #signin .container {
+    width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  #signin .container {
+    width: 30%;
+  }
+}
+#signin .container form {
+  padding: 1rem;
+}
+#signin .container form .content {
+  gap: 1rem 2rem;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  justify-content: center;
+  grid-template-columns: 1fr;
+  grid-template-areas: "email" "password" "remember" "button" "forgot" "hr" "external";
+}
+#signin .container form .content #form-email {
+  grid-area: email;
+}
+#signin .container form .content #form-password {
+  grid-area: password;
+}
+#signin .container form .content #form-remember {
+  grid-area: remember;
+}
+#signin .container form .content #form-button {
+  grid-area: button;
+}
+#signin .container form .content #forgot-password {
+  grid-area: forgot;
   text-align: center;
+  margin: 1rem 0 0 0;
 }
-.signinform .container .logIn {
-  display: block;
-  text-align: start;
-  font-size: large;
-  padding-bottom: 20px;
+#signin .container form .content hr {
+  grid-area: hr;
 }
-.signinform .container .logIn input {
-  width: 30dvh;
-  padding: 15px;
-  margin-top: 20px;
-}
-.signinform .container #remember {
-  text-align: start;
-}
-.signinform .container .signinbtn {
+#signin .container form .content #external-signin {
+  grid-area: external;
   display: flex;
-  justify-content: space-evenly;
-  margin: 40px 0 40px 0;
+  gap: 1rem;
+}
+#signin .container form .content #external-signin a {
+  flex: 1;
 }
 
 #signup {
