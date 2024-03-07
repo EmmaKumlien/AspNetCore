@@ -6,7 +6,7 @@
         justify-content: center;
         align-items: center;
         height: 100%;
-        border: 1px solid red;
+        
 
 
         @include lg {
@@ -19,6 +19,12 @@
 
         form {
             padding: 1rem;
+
+            .signin-error{
+                display:block;
+                justify-content:center;
+                text-align:center;
+            }
 
             .content {
                 gap: 1rem 2rem;
