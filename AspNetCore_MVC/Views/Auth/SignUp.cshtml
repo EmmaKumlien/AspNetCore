@@ -1,1 +1,61 @@
-﻿@await Html.PartialAsync("~/Views/Shared/Sections/SignUp/_SignUpPartial.cshtml")
+﻿
+@model SignUpViewModel
+@{
+	ViewData["Title"] = Model.PageTitle;
+}
+<section id="signup">
+	<div class="container">
+		<form method="post" asp-controller="Auth" asp-action="SignUp" novalidate>
+			<h1>Create Account</h1>
+			<p>Already have an account? Sign in <a asp-controller="Auth" asp-action="SignIn">here</a>.</p>
+
+			<div class="content">
+				<div id="form-firstname" class="input-group">
+					<label asp-for="SignUpForm.FirstName"></label>
+					<span asp-validation-for="SignUpForm.FirstName"></span>
+					<input type="text" asp-for="SignUpForm.FirstName"/>
+				</div>
+
+				<div id="form-lastname" class="input-group">
+					<label asp-for="SignUpForm.LastName"></label>
+					<span asp-validation-for="SignUpForm.LastName"></span>
+					<input type="text" asp-for="SignUpForm.LastName"/>
+				</div>
+
+				<div id="form-email" class="input-group">
+					<label asp-for="SignUpForm.Email"></label>
+					<span asp-validation-for="SignUpForm.Email"></span>
+					<input type="email" asp-for="SignUpForm.Email" />
+				</div>
+
+				<div id="form-password" class="input-group">
+					<label asp-for="SignUpForm.PassWord"></label>
+					<span asp-validation-for="SignUpForm.PassWord"></span>
+					<input type="password" asp-for="SignUpForm.PassWord" />
+				</div>
+
+				<div id="form-confirm" class="input-group">
+					<label asp-for="SignUpForm.Confirm"></label>
+					<span asp-validation-for="SignUpForm.Confirm"></span>
+					<input type="password" asp-for="SignUpForm.Confirm" />
+				</div>
+
+				<div id="form-terms" class="checkbox">
+					<div class="checkbox-group">
+						<input type="checkbox" asp-for="SignUpForm.Terms" />
+						<label asp-for="SignUpForm.Terms"> I agree to the <a asp-controller="About" asp-action="Terms">Terms</a> & <a asp-controller="About" asp-action="Conditions">Conditions</a>.</label>
+					</div>
+
+					<span asp-validation-for="SignUpForm.Terms"></span>
+
+				</div>
+				
+				<button id="form-button" class="btn-theme-s" type="submit">@Model.PageTitle</button>
+				
+
+			</div>
+			
+			
+		</form>
+	</div>
+</section>
