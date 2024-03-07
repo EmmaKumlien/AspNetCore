@@ -1014,6 +1014,8 @@ header .container .btn-mobile {
 
 .container {
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 .container #account-details {
   display: grid;
@@ -1054,77 +1056,95 @@ header .container .btn-mobile {
   text-align: center;
   border: 1px solid red;
 }
-.container #account-details .details .basicinfo form .content {
-  gap: 1rem 2rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: "firstname" "lastname" "email" "phone" "bio" "resetbtn" "submitbtn";
-  /* .form-buttons {
-      display: felx;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-  }*/
+.container #account-details .basic-info {
+  border: 1px solid red;
 }
-@media (min-width: 768px) {
-  .container #account-details .details .basicinfo form .content {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "firstname lastname" "email phone" "bio bio" "resetbtn submitbtn";
-  }
-}
-.container #account-details .details .basicinfo form .content #account-firstname {
-  grid-area: firstname;
-}
-.container #account-details .details .basicinfo form .content #account-lastname {
-  grid-area: lastname;
-}
-.container #account-details .details .basicinfo form .content #account-email {
-  grid-area: email;
-}
-.container #account-details .details .basicinfo form .content #account-phone {
-  grid-area: phone;
-}
-.container #account-details .details .basicinfo form .content #account-bio {
-  grid-area: bio;
-}
-.container #account-details .details .basicinfo form .content #reset-button {
-  grid-area: resetbtn;
-}
-.container #account-details .details .basicinfo form .content #submit-button {
-  grid-area: submitbtn;
-}
-.container #account-details .details .adress-info form {
+.container #account-details .basic-info form {
   padding: 1rem;
 }
-.container #account-details .details .adress-info form .content {
+.container #account-details .basic-info form .content {
   gap: 1rem 2rem;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-areas: "adress1" "adress2" "postal" "city" "resetbtn" "submitbtn";
+  grid-template-areas: "firstname" "lastname" "email" "phone" "bio" "button";
 }
 @media (min-width: 768px) {
-  .container #account-details .details .adress-info form .content {
+  .container #account-details .basic-info form .content {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "adress1 adress2" "postal city" "resetbtn submitbtn";
+    grid-template-areas: "firstname lastname" "email phone" "bio bio" "button button";
   }
 }
-.container #account-details .details .adress-info form .content #form-adress1 {
-  grid-area: adress1;
+.container #account-details .basic-info form .content #form-firstname {
+  grid-area: firstname;
 }
-.container #account-details .details .adress-info form .content #form-adress2 {
-  grid-area: adress2;
+.container #account-details .basic-info form .content #form-lastname {
+  grid-area: lastname;
 }
-.container #account-details .details .adress-info form .content #form-postal {
-  grid-area: postal;
+.container #account-details .basic-info form .content #form-email {
+  grid-area: email;
 }
-.container #account-details .details .adress-info form .content #form-city {
-  grid-area: city;
+.container #account-details .basic-info form .content #form-phone {
+  grid-area: phone;
 }
-.container #account-details .details .adress-info form .content #reset-button {
+.container #account-details .basic-info form .content #form-bio {
+  grid-area: bio;
+}
+.container #account-details .basic-info form .content #reset-button {
   grid-area: resetbtn;
 }
-.container #account-details .details .adress-info form .content #submit-button {
+.container #account-details .basic-info form .content #submit-button {
   grid-area: submitbtn;
+}
+.container #account-details .basic-info form .content .form-buttons {
+  grid-area: button;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  border: 1px solid blue;
+}
+.container #account-details .adress-info form {
+  padding: 1rem;
+}
+.container #account-details .adress-info form .content {
+  gap: 1rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "adress1" "adress2" "postal" "city" "button";
+}
+@media (min-width: 768px) {
+  .container #account-details .adress-info form .content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "adress1 adress2" "postal city" "button button";
+  }
+}
+.container #account-details .adress-info form .content #form-adress1 {
+  grid-area: adress1;
+}
+.container #account-details .adress-info form .content #form-adress2 {
+  grid-area: adress2;
+}
+.container #account-details .adress-info form .content #form-postal {
+  grid-area: postal;
+}
+.container #account-details .adress-info form .content #form-city {
+  grid-area: city;
+}
+.container #account-details .adress-info form .content #reset-button {
+  grid-area: resetbtn;
+}
+.container #account-details .adress-info form .content #submit-button {
+  grid-area: submitbtn;
+}
+.container #account-details .adress-info form .content .form-buttons {
+  grid-area: button;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  border: 1px solid blue;
 }
 
 footer {
