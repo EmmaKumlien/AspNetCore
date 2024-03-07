@@ -1,0 +1,51 @@
+﻿@model SignInViewModel
+@{
+	ViewData["Title"] = Model.PageTitle;
+}
+<section id="signin">
+	<div class="container">
+		<form method="post" asp-controller="Auth" asp-action="SignIn" novalidate>
+			<div asp-asp-validation-summary="All"></div>
+			<h1>Welcome Back</h1>
+			<p>Don't have an account yet? Sign up <a asp-asp-controller="Auth" asp-action="SignUp">here</a>.</p>
+
+			<div class="content">
+
+				<div id="form-email" class="input-group">
+					<label asp-for="SignIn.Email"></label>
+					<span asp-validation-for="SignIn.Email"></span>
+					<input type="email" asp-for="SignIn.Email" />
+				</div>
+
+				<div id="form-password" class="input-group">
+					<label asp-for="SignIn.PassWord"></label>
+					<span asp-validation-for="SignIn.PassWord"></span>
+					<input type="password" asp-for="SignIn.PassWord" />
+				</div>
+
+
+				<div id="form-remember" class="checkbox">
+					<div class="checkbox-group">
+						<input type="checkbox" asp-for="SignIn.RemeberMe" />
+						<label asp-for="SignIn.RemeberMe"></label>
+					</div>
+
+				</div>
+
+				<button id="form-button" class="btn-theme-s" type="submit">@Model.PageTitle</button>
+
+				<a id="forgot-password" asp-controller="Auth" asp-action="GeneratePassword">Forgot your password?</a>
+
+				<hr/>
+				<div id="external-signin">
+					<a class="btn-gray" asp-controller="external" asp-action="signin"><i class="fa-brands fa-google"></i>Google</a>
+					<a class="btn-gray" asp-controller="external" asp-action="signin"><i class="fa-brands fa-facebook"></i>Facebook</a>
+
+				</div>
+				
+			</div>
+		</form>
+
+		
+	</div>
+</section>

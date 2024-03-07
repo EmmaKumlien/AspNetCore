@@ -1,45 +1,68 @@
+#signin {
+    height: 100%;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        border: 1px solid red;
 
 
-    .SigninTilte {
-
-        .container {
-            display: flex;
-            justify-content: center;
+        @include lg {
+            width: 60%
         }
-    }
 
-    .signinform {
+        @include xl {
+            width: 30%;
+        }
 
-        .container {
-            display: grid;
-            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-            justify-content: center;
-            text-align: center;
+        form {
+            padding: 1rem;
 
-            .logIn {
-                display: block;
-                text-align: start;
-                font-size: large;
-                padding-bottom: 20px;
+            .content {
+                gap: 1rem 2rem;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-areas:  "email" "password" "remember" "button" "forgot" "hr" "external";
+
+               
+                #form-email {
+                    grid-area: email;
+                }
+
+                #form-password {
+                    grid-area: password;
+                }
 
 
+                #form-remember {
+                    grid-area: remember;
+                }
 
-                input {
-                    width: 30dvh;
-                    padding: 15px;
-                    margin-top: 20px;
+                #form-button {
+                    grid-area: button;
+                }
+                #forgot-password{
+                    grid-area:forgot;
+                    text-align:center;
+                    margin:1rem 0 0 0;
+                }
+
+                hr{
+                    grid-area:hr;
+                }
+
+                #external-signin{
+                    grid-area:external;
+                    display:flex;
+                    gap:1rem;
+
+                    a{
+                        flex:1;
+                    }
                 }
             }
-
-            #remember {
-                text-align: start;
-            }
-
-            .signinbtn {
-                display: flex;
-                justify-content: space-evenly;
-                margin: 40px 0 40px 0;
-            }
         }
     }
-
+}
