@@ -1,0 +1,148 @@
+.container {
+    height: 100%;
+
+
+    #account-details {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "details";
+        border: 1px solid green;
+
+        @include lg {
+            display: grid;
+            grid-template-columns: auto 2fr;
+            grid-template-areas: "slide details";
+            height: 100%;
+        }
+
+
+
+        aside {
+            border: 1px solid blue;
+            display: none;
+
+            @include lg {
+                grid-area: slide;
+                display: block;
+                align-items: center;
+                text-align: center;
+                gap: 1rem 0;
+            }
+
+            .profile-info {
+
+                img {
+                    height: 120px;
+                    width: auto;
+                    border-radius: 60px;
+                }
+            }
+        }
+
+        .details {
+            grid-area: details;
+            display: block;
+            align-items: center;
+            text-align: center;
+            border: 1px solid red;
+
+            .basicinfo {
+
+
+                form {
+
+
+                    .content {
+                        gap: 1rem 2rem;
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        grid-template-areas: "firstname" "lastname" "email" "phone" "bio" "resetbtn" "submitbtn";
+
+                        @include md {
+                            grid-template-columns: 1fr 1fr;
+                            grid-template-areas: "firstname lastname" "email phone" "bio bio" "resetbtn submitbtn";
+                        }
+
+
+                        #account-firstname {
+                            grid-area: firstname;
+                        }
+
+                        #account-lastname {
+                            grid-area: lastname;
+                        }
+
+                        #account-email {
+                            grid-area: email;
+                        }
+
+                        #account-phone {
+                            grid-area: phone;
+                        }
+
+                        #account-bio {
+                            grid-area: bio;
+                        }
+
+                        #reset-button {
+                            grid-area: resetbtn;
+                        }
+
+                        #submit-button {
+                            grid-area: submitbtn;
+                        }
+                        /* .form-buttons {
+                            display: felx;
+                            justify-content: center;
+                            align-items: center;
+                            text-align: center;
+                        }*/
+                    }
+                }
+            }
+
+            .adress-info {
+                form {
+                    padding: 1rem;
+
+                    .content {
+                        gap: 1rem 2rem;
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        grid-template-areas: "adress1" "adress2" "postal" "city" "resetbtn" "submitbtn";
+
+                        @include md {
+                            grid-template-columns: 1fr 1fr;
+                            grid-template-areas: "adress1 adress2" "postal city" "resetbtn submitbtn";
+                        }
+
+
+                        #form-adress1 {
+                            grid-area: adress1;
+                        }
+
+                        #form-adress2 {
+                            grid-area: adress2;
+                        }
+
+                        #form-postal {
+                            grid-area: postal;
+                        }
+
+                        #form-city {
+                            grid-area: city;
+                        }
+
+                        #reset-button {
+                            grid-area: resetbtn;
+                        }
+
+                        #submit-button {
+                            grid-area: submitbtn;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

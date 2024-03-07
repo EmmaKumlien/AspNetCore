@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspNetCore_MVC.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCore_MVC.Controllers
 {
@@ -10,12 +11,19 @@ namespace AspNetCore_MVC.Controllers
 		//{
 		//	_accountService = accountService;
 		//}
-		public IActionResult Index()
+
+		[Route("/account")]
+		public IActionResult Details(AccountDetailsViewModel viewModel)
         {
-            ViewData["Title"] = "Account Details";
-            return View();
+			
+            return View(viewModel);
         }
-		
+
+		[HttpPost]
+		public IActionResult BasicInfo(AccountDetailsViewModel viewModel)
+		{
+			return RedirectToAction(nameof(Details),viewModel);
+		}
 		public new IActionResult SignOut()
 		{
 			
