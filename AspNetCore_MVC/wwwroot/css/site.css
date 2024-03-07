@@ -373,6 +373,71 @@ a:hover {
   color: #33354D;
 }
 
+form {
+  width: 100%;
+  display: grid;
+}
+form .input-group {
+  display: grid;
+}
+form .checkbox span {
+  display: block;
+}
+form .checkbox span.field-validation-error {
+  position: static;
+  top: 0;
+  right: 0;
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px !important;
+  color: #EF4444;
+}
+form .checkbox-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+form .checkbox-group input[type=checkbox] {
+  height: 1.3rem;
+  width: 1.3rem;
+}
+form .checkbox-group label {
+  margin: 0;
+  font-weight: 400;
+}
+form label {
+  margin-bottom: 3px;
+  font-weight: 700;
+}
+form input {
+  padding: 1rem;
+  border-radius: 8px !important;
+  border: 1px solid #565973;
+}
+form input::placeholder {
+  opacity: 0.7;
+}
+form input.input-validation-error {
+  border: 1px solid #EF4444 !important;
+}
+form input.input-validation-error::placeholder {
+  color: #EF4444;
+}
+form span.field-validation-error {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px !important;
+  color: #EF4444;
+}
+
 header {
   padding: 15px 0;
 }
@@ -828,91 +893,119 @@ header .container .btn-mobile {
   display: block;
 }
 
-.SigninTilte .container {
+#signin {
+  height: 100%;
+}
+#signin .container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100%;
+  border: 1px solid red;
 }
-
-.signinform .container {
+@media (min-width: 992px) {
+  #signin .container {
+    width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  #signin .container {
+    width: 30%;
+  }
+}
+#signin .container form {
+  padding: 1rem;
+}
+#signin .container form .content {
+  gap: 1rem 2rem;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  justify-content: center;
+  grid-template-columns: 1fr;
+  grid-template-areas: "email" "password" "remember" "button" "forgot" "hr" "external";
+}
+#signin .container form .content #form-email {
+  grid-area: email;
+}
+#signin .container form .content #form-password {
+  grid-area: password;
+}
+#signin .container form .content #form-remember {
+  grid-area: remember;
+}
+#signin .container form .content #form-button {
+  grid-area: button;
+}
+#signin .container form .content #forgot-password {
+  grid-area: forgot;
   text-align: center;
+  margin: 1rem 0 0 0;
 }
-.signinform .container .logIn {
-  display: block;
-  text-align: start;
-  font-size: large;
-  padding-bottom: 20px;
+#signin .container form .content hr {
+  grid-area: hr;
 }
-.signinform .container .logIn input {
-  width: 30dvh;
-  padding: 15px;
-  margin-top: 20px;
-}
-.signinform .container #remember {
-  text-align: start;
-}
-.signinform .container .signinbtn {
+#signin .container form .content #external-signin {
+  grid-area: external;
   display: flex;
-  justify-content: space-evenly;
-  margin: 40px 0 40px 0;
+  gap: 1rem;
+}
+#signin .container form .content #external-signin a {
+  flex: 1;
 }
 
-.SignupTitle .container {
-  display: block;
-  text-align: center;
+#signup {
+  height: 100%;
 }
-
-.Signupform .container {
+#signup .container {
   display: flex;
   justify-content: center;
-  text-align: center;
-  height: 100vh;
+  align-items: center;
+  height: 100%;
+  border: 1px solid red;
 }
-.Signupform .container .forminfo {
-  text-align: start;
-  padding: 40px;
-  width: 750px;
+@media (min-width: 992px) {
+  #signup .container {
+    width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  #signup .container {
+    width: 45%;
+  }
+}
+#signup .container form {
+  padding: 1rem;
+}
+#signup .container form .content {
+  gap: 1rem 2rem;
   display: grid;
-  grid-template-areas: "FirstName LastName" "Email Email" "PassW PassW" "PassWR PassWR" "Checkbox Checkbox" "SignupBtn SignupBtn";
-  grid-template-columns: auto auto;
-  grid-auto-rows: auto auto auto auto auto auto;
+  grid-template-columns: 1fr;
+  grid-template-areas: "firstname" "lastname" "email" "password" "confirm" "terms" "button";
 }
-.Signupform .container .forminfo .First {
-  grid-area: FirstName;
-  padding-right: 20px;
+@media (min-width: 768px) {
+  #signup .container form .content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "firstname lastname" "email email" "password password" "confirm confirm" "terms terms" "button button";
+  }
 }
-.Signupform .container .forminfo .Last {
-  grid-area: LastName;
+#signup .container form .content #form-firstname {
+  grid-area: firstname;
 }
-.Signupform .container .forminfo .Email {
-  grid-area: Email;
+#signup .container form .content #form-lastname {
+  grid-area: lastname;
 }
-.Signupform .container .forminfo .PassW {
-  grid-area: PassW;
+#signup .container form .content #form-email {
+  grid-area: email;
 }
-.Signupform .container .forminfo .PassWR {
-  grid-area: PassWR;
+#signup .container form .content #form-password {
+  grid-area: password;
 }
-.Signupform .container .forminfo .remember {
-  grid-area: Checkbox;
+#signup .container form .content #form-confirm {
+  grid-area: confirm;
 }
-.Signupform .container .forminfo .remember input {
-  width: 30px;
+#signup .container form .content #form-terms {
+  grid-area: terms;
 }
-.Signupform .container .forminfo .btnSignup {
-  grid-area: SignupBtn;
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  width: 100%;
-}
-.Signupform .container .forminfo input {
-  border-radius: 10px;
-  padding: 15px;
-  margin: 10px 0 30px 0;
-  width: 100%;
+#signup .container form .content #form-button {
+  grid-area: button;
 }
 
 * {

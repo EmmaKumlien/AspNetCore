@@ -1,87 +1,65 @@
+#signup {
+    height: 100%;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        border: 1px solid red;
 
 
-    .SignupTitle {
-
-        .container {
-            display: block;
-            text-align: center;
+        @include lg {
+            width: 60%
         }
-    }
 
+        @include xl {
+            width: 45%;
+        }
 
+        form {
+            padding:1rem;
 
-    .Signupform {
-
-
-        .container {
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            height: 100vh;
-
-
-
-            .forminfo {
-                text-align: start;
-                padding: 40px;
-                width: 750px;
+            .content {
+                gap: 1rem 2rem;
                 display: grid;
-                grid-template-areas:
-                    "FirstName LastName" 
-                    "Email Email" "PassW PassW" 
-                    "PassWR PassWR" 
-                    "Checkbox Checkbox" 
-                    "SignupBtn SignupBtn";
-                grid-template-columns: auto auto;
-                grid-auto-rows: auto auto auto auto auto auto;
+                grid-template-columns: 1fr;
+                grid-template-areas: "firstname" "lastname" "email" "password" "confirm" "terms" "button";
 
-                .First {
-                    grid-area: FirstName;
-                    padding-right: 20px;
-                }
-
-                .Last {
-                    grid-area: LastName;
-                }
-
-                .Email {
-                    grid-area: Email;
-                }
-
-                .PassW {
-                    grid-area: PassW;
-                }
-
-                .PassWR {
-                    grid-area: PassWR;
-                }
-
-                .remember {
-                    grid-area: Checkbox;
-
-                    input {
-                        width: 30px;
-                    }
-                }
-
-                .btnSignup {
-                    grid-area: SignupBtn;
-                    display: flex;
-                    justify-content: center;
-                    margin-top: 30px;
-                    width: 100%;
+                @include md {
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas: "firstname lastname" "email email" "password password" "confirm confirm" "terms terms" "button button";
                 }
 
 
+                #form-firstname {
+                    grid-area: firstname;
+                }
 
+                #form-lastname {
+                    grid-area: lastname;
+                }
 
-                input {
-                    border-radius: 10px;
-                    padding: 15px;
-                    margin: 10px 0 30px 0;
-                    width: 100%;
+                #form-email {
+                    grid-area: email;
+                }
+
+                #form-password {
+                    grid-area: password;
+                }
+
+                #form-confirm {
+                    grid-area: confirm;
+                }
+
+                #form-terms {
+                    grid-area: terms;
+                }
+
+                #form-button {
+                    grid-area: button;
                 }
             }
         }
     }
-
+}
