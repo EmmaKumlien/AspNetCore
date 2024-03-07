@@ -901,7 +901,6 @@ header .container .btn-mobile {
   justify-content: center;
   align-items: center;
   height: 100%;
-  border: 1px solid red;
 }
 @media (min-width: 992px) {
   #signin .container {
@@ -915,6 +914,11 @@ header .container .btn-mobile {
 }
 #signin .container form {
   padding: 1rem;
+}
+#signin .container form .signin-error {
+  display: block;
+  justify-content: center;
+  text-align: center;
 }
 #signin .container form .content {
   gap: 1rem 2rem;
