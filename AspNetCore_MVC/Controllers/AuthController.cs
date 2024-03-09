@@ -21,7 +21,7 @@ public class AuthController : Controller
 		{
 			return View(model);
 		}
-		return RedirectToAction("signIn","Auth");
+		return RedirectToAction("Details","Account");
 	}
 
 	[Route("/signin")]
