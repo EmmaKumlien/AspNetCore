@@ -4,7 +4,7 @@ namespace AspNetCore_MVC.ViewModels;
 
 public class AccountDetailsViewModel
 {
-	public string PageTitle { get; set; } = "Account";
+	public string PageTitle { get; set; } = "Account Details";
 	public AccountBasicInfoModel BasicInfo { get; set; } = new AccountBasicInfoModel()
 	{
 		ProfilePicture = "images/Account/kattbild.svg",

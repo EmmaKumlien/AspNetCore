@@ -409,13 +409,13 @@ form .checkbox-group label {
   font-weight: 400;
 }
 form label {
-  margin-bottom: 3px;
+  margin-bottom: 0.18rem;
   font-weight: 700;
 }
 form input {
   padding: 1rem;
-  border-radius: 8px !important;
-  border: 1px solid #565973;
+  border-radius: 0.5rem !important;
+  border: 0.06rem solid #565973;
 }
 form input::placeholder {
   opacity: 0.7;
@@ -429,7 +429,7 @@ form input.input-validation-error::placeholder {
 form textarea {
   padding: 1rem;
   border-radius: 0.5rem !important;
-  border: 0.4rem solid #D4D7E5;
+  border: 0.3rem solid #D4D7E5;
   resize: none;
   width: 100%;
 }
@@ -1032,9 +1032,11 @@ header .container .btn-mobile {
 #account-details {
   display: grid;
   height: 100%;
+  padding-top: 1rem;
 }
 @media (min-width: 768px) {
   #account-details {
+    display: grid;
     gap: 150px;
     grid-template-columns: 2fr 5fr;
     margin-bottom: 70px;
@@ -1047,7 +1049,7 @@ header .container .btn-mobile {
   #account-details aside {
     display: block;
     border-right: 1px solid #E2E5F1;
-    padding-right: 1.2rem;
+    padding-right: 1.5rem;
   }
 }
 #account-details aside .profile-info {
@@ -1060,7 +1062,7 @@ header .container .btn-mobile {
   border-radius: 60px;
 }
 #account-details aside .profile-info h5 {
-  margin-top: 15px;
+  margin-top: 1rem;
   margin-bottom: 0;
 }
 #account-details aside .profile-info p {
@@ -1087,9 +1089,6 @@ header .container .btn-mobile {
   margin-top: 50px;
   width: 100%;
 }
-#account-details .details .basic-info {
-  display: block;
-}
 #account-details .details .basic-info form {
   padding: 1rem;
 }
@@ -1102,7 +1101,7 @@ header .container .btn-mobile {
   grid-template-columns: 1fr;
   grid-template-areas: "firstname" "lastname" "email" "phone" "bio" "buttons";
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   #account-details .details .basic-info form .content {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "firstname lastname" "email phone" "bio bio" "buttons buttons";
@@ -1122,7 +1121,6 @@ header .container .btn-mobile {
 }
 #account-details .details .basic-info form .content #form-bio {
   grid-area: bio;
-  border: 1px solid red;
 }
 #account-details .details .basic-info form .content #form-bio span {
   color: #B4B7C9;
@@ -1134,48 +1132,54 @@ header .container .btn-mobile {
   display: flex;
   gap: 20px;
 }
-#account-details .adress-info {
+#account-details .details .basic-info form .content input {
+  width: 100%;
+}
+#account-details .details .adress-info {
   margin-top: 30px;
 }
-#account-details .adress-info form {
+#account-details .details .adress-info form {
   padding: 1rem;
 }
-#account-details .adress-info form h5 {
+#account-details .details .adress-info form h5 {
   color: #6366F1;
 }
-#account-details .adress-info form .content {
+#account-details .details .adress-info form .content {
   display: grid;
   gap: 1rem 2rem;
   grid-template-columns: 1fr;
   grid-template-areas: "adress_1" "adress_2" "postal" "city" "buttons";
 }
-@media (min-width: 768px) {
-  #account-details .adress-info form .content {
+@media (min-width: 992px) {
+  #account-details .details .adress-info form .content {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "adress_1 adress_2" "postal city" "buttons buttons";
+    grid-template-areas: "adress_1 adress_1" "adress_2 adress_2" "postal city" "buttons buttons";
   }
 }
-#account-details .adress-info form .content #form-adress1 {
+#account-details .details .adress-info form .content #form-adress1 {
   grid-area: adress_1;
 }
-#account-details .adress-info form .content #form-adress2 {
+#account-details .details .adress-info form .content #form-adress2 {
   grid-area: adress_2;
 }
-#account-details .adress-info form .content #form-adress2 span {
+#account-details .details .adress-info form .content #form-adress2 span {
   color: #B4B7C9;
   font-weight: 400;
 }
-#account-details .adress-info form .content #form-postal {
+#account-details .details .adress-info form .content #form-postal {
   grid-area: postal;
 }
-#account-details .adress-info form .content #form-city {
+#account-details .details .adress-info form .content #form-city {
   grid-area: city;
 }
-#account-details .adress-info form .content .form-buttons {
+#account-details .details .adress-info form .content .form-buttons {
   grid-area: buttons;
   margin: 20px 0;
   display: flex;
   gap: 20px;
+}
+#account-details .details .adress-info form .content input {
+  width: 100%;
 }
 
 footer {

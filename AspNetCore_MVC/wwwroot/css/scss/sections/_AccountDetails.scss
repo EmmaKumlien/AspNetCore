@@ -1,8 +1,10 @@
 #account-details {
     display: grid;
     height: 100%;
+    padding-top:1rem;
 
     @include md {
+        display: grid;
         gap: 150px;
         grid-template-columns: 2fr 5fr;
         margin-bottom: 70px;
@@ -16,7 +18,7 @@
         @include md {
             display: block;
             border-right: 1px solid $gray-300;
-            padding-right: 1.2rem;
+            padding-right: 1.5rem;
         }
 
 
@@ -31,7 +33,7 @@
             }
 
             h5 {
-                margin-top: 15px;
+                margin-top: 1rem;
                 margin-bottom: 0;
             }
 
@@ -62,12 +64,13 @@
         width: 100%;
 
 
+
         .basic-info {
-            
+
 
             form {
                 padding: 1rem;
-                
+
 
                 h5 {
                     color: $theme;
@@ -79,7 +82,7 @@
                     grid-template-columns: 1fr;
                     grid-template-areas: "firstname" "lastname" "email" "phone" "bio" "buttons";
 
-                    @include md {
+                    @include lg {
                         grid-template-columns: 1fr 1fr;
                         grid-template-areas: "firstname lastname" "email phone" "bio bio" "buttons buttons";
                     }
@@ -103,7 +106,7 @@
 
                     #form-bio {
                         grid-area: bio;
-                        border: 1px solid red;
+                        
 
                         span {
                             color: $gray-500;
@@ -117,59 +120,67 @@
                         display: flex;
                         gap: 20px;
                     }
+
+                    input {
+                        width: 100%;
+                    }
                 }
             }
         }
-    }
 
-    .adress-info {
-        margin-top: 30px;
+        .adress-info {
+            margin-top: 30px;
 
-        form {
-            padding: 1rem;
+            form {
+                padding: 1rem;
 
-            h5 {
-                color: $theme;
-            }
-
-            .content {
-                display: grid;
-                gap: 1rem 2rem;
-                grid-template-columns: 1fr;
-                grid-template-areas: "adress_1" "adress_2" "postal" "city" "buttons";
-
-                @include md {
-                    grid-template-columns: 1fr 1fr;
-                    grid-template-areas: "adress_1 adress_2" "postal city" "buttons buttons";
+                h5 {
+                    color: $theme;
                 }
 
+                .content {
+                    display: grid;
+                    gap: 1rem 2rem;
+                    grid-template-columns: 1fr;
+                    grid-template-areas: "adress_1" "adress_2" "postal" "city" "buttons";
 
-                #form-adress1 {
-                    grid-area: adress_1;
-                }
-
-                #form-adress2 {
-                    grid-area: adress_2;
-
-                    span {
-                        color: $gray-500;
-                        font-weight: 400;
+                    @include lg {
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-areas: "adress_1 adress_1" "adress_2 adress_2" "postal city" "buttons buttons";
                     }
-                }
 
-                #form-postal {
-                    grid-area: postal;
-                }
 
-                #form-city {
-                    grid-area: city;
-                }
+                    #form-adress1 {
+                        grid-area: adress_1;
+                    }
 
-                .form-buttons {
-                    grid-area: buttons;
-                    margin: 20px 0;
-                    display: flex;
-                    gap: 20px;
+                    #form-adress2 {
+                        grid-area: adress_2;
+
+                        span {
+                            color: $gray-500;
+                            font-weight: 400;
+                        }
+                    }
+
+                    #form-postal {
+                        grid-area: postal;
+                    }
+
+                    #form-city {
+                        grid-area: city;
+                    }
+
+                    .form-buttons {
+                        grid-area: buttons;
+                        margin: 20px 0;
+                        display: flex;
+                        gap: 20px;
+                    }
+
+                    input {
+                        width: 100%;
+                    }
                 }
             }
         }

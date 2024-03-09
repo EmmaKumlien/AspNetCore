@@ -21,9 +21,6 @@
 		<div class="details">
 			<section class="basic-info">
 				<form method="post" asp-controller="Account" asp-action="BasicInfo" novalidate>
-					@* <div class="signin-error">
-						@Model.ErrorMessage
-					</div> *@
 
 					<h5>Account Details</h5>
 					<p>Basic Info</p>
@@ -60,7 +57,7 @@
 						</div>
 						
 						<div class="form-buttons">
-							<button id="reset-button" class="btn-theme-s" type="reset">Cancel</button>
+							<button id="reset-button" class="btn-gray" type="reset">Cancel</button>
 							<button id="submit-button" class="btn-theme-s" type="submit">Save</button>
 						</div>
 						
@@ -68,13 +65,11 @@
 					</div>
 				</form>
 			</section>
+			
 			<hr/>
 
 			<section class="adress-info">
 				<form method="post" asp-controller="Account" asp-action="AdressInfo" novalidate>
-					@* <div class="signin-error">
-						@Model.ErrorMessage
-					</div> *@
 
 					<h5>Adress Info</h5>
 				
@@ -106,7 +101,7 @@
 							
 
 						<div class="form-buttons">
-							<button id="reset-button" class="btn-theme-s" type="reset">Cancel</button>
+							<button id="reset-button" class="btn-gray" type="reset">Cancel</button>
 							<button id="submit-button" class="btn-theme-s" type="submit">Save</button>
 						</div>
 
