@@ -4,12 +4,12 @@ namespace AspNetCore_MVC.Models;
 
 public class AccountAdressInfoModel
 {
-	[Display(Name = "Adress 1", Prompt = "Enter adress", Order = 0)]
+	[Display(Name = "Adress line 1", Prompt = "Enter adress", Order = 0)]
 	[Required(ErrorMessage = "Adress line is required")]
 	
 	public string AdressLine_1 { get; set; } = null!;
 
-	[Display(Name = "Adress 2", Prompt = "Enter second adress", Order = 1)]
+	[Display(Name = "Adress line 2", Prompt = "Enter second adress", Order = 1)]
 	public string? AdressLine_2 { get; set; }
 
 	[Display(Name = "Postal code", Prompt = "Write your postal code", Order = 2)]

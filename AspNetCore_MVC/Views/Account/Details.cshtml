@@ -25,7 +25,7 @@
 						@Model.ErrorMessage
 					</div> *@
 
-					<h1>Account Details</h1>
+					<h5>Account Details</h5>
 					<p>Basic Info</p>
 
 					<div class="content">
@@ -33,42 +33,42 @@
 						<div id="form-firstname" class="info-group">
 							<label asp-for="BasicInfo.FirstName"></label>
 							<span asp-validation-for="BasicInfo.FirstName"></span>
-							<input type="text" asp-for="BasicInfo.FirstName" />
+							<input asp-for="BasicInfo.FirstName" />
 						</div>
 
 						<div id="form-lastname" class="info-group">
 							<label asp-for="BasicInfo.LastName"></label>
 							<span asp-validation-for="BasicInfo.LastName"></span>
-							<input type="text" asp-for="BasicInfo.LastName" />
+							<input asp-for="BasicInfo.LastName" />
 						</div>
 
 						<div id="form-email" class="info-group">
 							<label asp-for="BasicInfo.Email"></label>
 							<span asp-validation-for="BasicInfo.Email"></span>
-							<input type="text" asp-for="BasicInfo.Email" />
+							<input asp-for="BasicInfo.Email" />
 						</div>
 
 						<div id="form-phone" class="info-group">
 							<label asp-for="BasicInfo.Phone"></label>
 							<span asp-validation-for="BasicInfo.Phone"></span>
-							<input type="text" asp-for="BasicInfo.Phone" />
+							<input asp-for="BasicInfo.Phone" />
 						</div>
 
 						<div id="form-bio" class="info-group">
-							<label asp-for="BasicInfo.Bio"></label>
-							<span asp-validation-for="BasicInfo.Bio"></span>
-							<input type="text" asp-for="BasicInfo.Bio" />
+							<label asp-for="BasicInfo.Bio">Bio<span>(optional)</span></label>
+							<textarea asp-for="BasicInfo.Bio"></textarea>
 						</div>
 						
 						<div class="form-buttons">
-							<button id="reset-button" class="btn-theme-s" type="reset">@Model.PageTitle</button>
-							<button id="submit-button" class="btn-theme-s" type="submit">@Model.PageTitle</button>
+							<button id="reset-button" class="btn-theme-s" type="reset">Cancel</button>
+							<button id="submit-button" class="btn-theme-s" type="submit">Save</button>
 						</div>
 						
 
 					</div>
 				</form>
 			</section>
+			<hr/>
 
 			<section class="adress-info">
 				<form method="post" asp-controller="Account" asp-action="AdressInfo" novalidate>
@@ -76,38 +76,38 @@
 						@Model.ErrorMessage
 					</div> *@
 
-					<h1>Adress Info</h1>
-					<p></p>
+					<h5>Adress Info</h5>
+				
 
 					<div class="content">
 
 						<div id="form-adress1" class="info-group">
 							<label asp-for="AdressInfo.AdressLine_1"></label>
 							<span asp-validation-for="AdressInfo.AdressLine_1"></span>
-							<input type="text" asp-for="AdressInfo.AdressLine_1" />
+							<input asp-for="AdressInfo.AdressLine_1" />
 						</div>
 
 						<div id="form-adress2" class="info-group">
-							<label asp-for="AdressInfo.AdressLine_2"></label>
+							<label asp-for="AdressInfo.AdressLine_2">Adressline 2<span>(optional)</span></label>
 							<span asp-validation-for="AdressInfo.AdressLine_2"></span>
-							<input type="text" asp-for="AdressInfo.AdressLine_2" />
+							<input asp-for="AdressInfo.AdressLine_2" />
 						</div>
 
 						<div id="form-postal" class="info-group">
 							<label asp-for="AdressInfo.PostalCode"></label>
 							<span asp-validation-for="AdressInfo.PostalCode"></span>
-							<input type="text" asp-for="AdressInfo.PostalCode" />
+							<input asp-for="AdressInfo.PostalCode" />
 						</div>
 						<div id="form-city" class="info-group">
 							<label asp-for="AdressInfo.City"></label>
 							<span asp-validation-for="AdressInfo.City"></span>
-							<input type="text" asp-for="AdressInfo.City" />
+							<input asp-for="AdressInfo.City" />
 						</div>
 							
 
 						<div class="form-buttons">
-							<button id="reset-button" class="btn-theme-s" type="reset">@Model.PageTitle</button>
-							<button id="submit-button" class="btn-theme-s" type="submit">@Model.PageTitle</button>
+							<button id="reset-button" class="btn-theme-s" type="reset">Cancel</button>
+							<button id="submit-button" class="btn-theme-s" type="submit">Save</button>
 						</div>
 
 

@@ -1,71 +1,87 @@
-.container {
+#account-details {
+    display: grid;
     height: 100%;
-    display:flex;
-    justify-content:center;
-   
 
-    #account-details {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: "details";
-        border: 1px solid green;
-
-        @include lg {
-            display: grid;
-            grid-template-columns: auto 2fr;
-            grid-template-areas: "slide details";
-            height: 100%;
-        }
+    @include md {
+        gap: 150px;
+        grid-template-columns: 2fr 5fr;
+        margin-bottom: 70px;
+    }
 
 
 
-        aside {
-            border: 1px solid blue;
-            display: none;
+    aside {
+        display: none;
 
-            @include lg {
-                grid-area: slide;
-                display: block;
-                align-items: center;
-                text-align: center;
-                gap: 1rem 0;
-            }
-
-            .profile-info {
-
-                img {
-                    height: 120px;
-                    width: auto;
-                    border-radius: 60px;
-                }
-            }
-        }
-
-        .details {
-            grid-area: details;
+        @include md {
             display: block;
-            align-items: center;
-            text-align: center;
-            border: 1px solid red;
+            border-right: 1px solid $gray-300;
+            padding-right: 1.2rem;
         }
+
+
+        .profile-info {
+            text-align: center;
+            margin: 1.2rem;
+
+            img {
+                height: 100px;
+                width: auto;
+                border-radius: 60px;
+            }
+
+            h5 {
+                margin-top: 15px;
+                margin-bottom: 0;
+            }
+
+            p {
+                @include text-m;
+            }
+        }
+
+        nav {
+            margin-top: 50px;
+            text-align: left;
+
+            a {
+                margin: 10px 0;
+                text-align: left;
+                justify-content: flex-start;
+            }
+
+            .btn-theme-s {
+                text-align: left;
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    .details {
+        margin-top: 50px;
+        width: 100%;
+
 
         .basic-info {
-            border: 1px solid red;
+            
 
             form {
                 padding: 1rem;
+                
 
+                h5 {
+                    color: $theme;
+                }
 
                 .content {
-                    gap: 1rem 2rem;
                     display: grid;
+                    gap: 1rem 2rem;
                     grid-template-columns: 1fr;
-                    grid-template-areas: "firstname" "lastname" "email" "phone" "bio" "button";
-
+                    grid-template-areas: "firstname" "lastname" "email" "phone" "bio" "buttons";
 
                     @include md {
                         grid-template-columns: 1fr 1fr;
-                        grid-template-areas: "firstname lastname" "email phone" "bio bio" "button button";
+                        grid-template-areas: "firstname lastname" "email phone" "bio bio" "buttons buttons";
                     }
 
 
@@ -87,78 +103,73 @@
 
                     #form-bio {
                         grid-area: bio;
-                    }
+                        border: 1px solid red;
 
-                    #reset-button {
-                        grid-area: resetbtn;
-                    }
-
-                    #submit-button {
-                        grid-area: submitbtn;
+                        span {
+                            color: $gray-500;
+                            font-weight: 400;
+                        }
                     }
 
                     .form-buttons {
-                        grid-area: button;
+                        grid-area: buttons;
+                        margin: 20px 0;
                         display: flex;
-                        justify-content: space-evenly;
-                        align-items: center;
-                        text-align: center;
-                        flex: 1;
-                        border: 1px solid blue;
+                        gap: 20px;
                     }
                 }
             }
         }
+    }
 
-        .adress-info {
-            form {
-                padding: 1rem;
+    .adress-info {
+        margin-top: 30px;
 
-                .content {
-                    gap: 1rem 2rem;
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    grid-template-areas: "adress1" "adress2" "postal" "city""button";
+        form {
+            padding: 1rem;
 
-                    @include md {
-                        grid-template-columns: 1fr 1fr;
-                        grid-template-areas: "adress1 adress2" "postal city" "button button";
+            h5 {
+                color: $theme;
+            }
+
+            .content {
+                display: grid;
+                gap: 1rem 2rem;
+                grid-template-columns: 1fr;
+                grid-template-areas: "adress_1" "adress_2" "postal" "city" "buttons";
+
+                @include md {
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas: "adress_1 adress_2" "postal city" "buttons buttons";
+                }
+
+
+                #form-adress1 {
+                    grid-area: adress_1;
+                }
+
+                #form-adress2 {
+                    grid-area: adress_2;
+
+                    span {
+                        color: $gray-500;
+                        font-weight: 400;
                     }
+                }
 
+                #form-postal {
+                    grid-area: postal;
+                }
 
-                    #form-adress1 {
-                        grid-area: adress1;
-                    }
+                #form-city {
+                    grid-area: city;
+                }
 
-                    #form-adress2 {
-                        grid-area: adress2;
-                    }
-
-                    #form-postal {
-                        grid-area: postal;
-                    }
-
-                    #form-city {
-                        grid-area: city;
-                    }
-
-                    #reset-button {
-                        grid-area: resetbtn;
-                    }
-
-                    #submit-button {
-                        grid-area: submitbtn;
-                    }
-
-                    .form-buttons {
-                        grid-area: button;
-                        display: flex;
-                        justify-content: space-evenly;
-                        align-items: center;
-                        text-align: center;
-                        flex: 1;
-                        border: 1px solid blue;
-                    }
+                .form-buttons {
+                    grid-area: buttons;
+                    margin: 20px 0;
+                    display: flex;
+                    gap: 20px;
                 }
             }
         }

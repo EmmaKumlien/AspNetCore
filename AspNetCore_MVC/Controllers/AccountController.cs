@@ -13,22 +13,32 @@ namespace AspNetCore_MVC.Controllers
 		//}
 
 		[Route("/account")]
-		public IActionResult Details(AccountDetailsViewModel viewModel)
+		public IActionResult Details()
         {
-			
+			var viewModel = new AccountDetailsViewModel();
+			//viewModel.BasicInfo = _accountServices.GetBasicInfo();
+			//viewModel.AdressInfo = _accountServices.GetAdressInfo();
             return View(viewModel);
         }
 
 		[HttpPost]
 		public IActionResult BasicInfo(AccountDetailsViewModel viewModel)
 		{
-			return RedirectToAction(nameof(Details),viewModel);
+			//_accountServices.SaveBasicInfo(viewModel.BsicInfo);
+			return RedirectToAction(nameof(Details));
+		}
+		[HttpPost]
+		public IActionResult AdressInfo(AccountDetailsViewModel viewModel)
+		{
+			//_accountServices.SaveAdressInfo(viewModel.AdressInfo);
+			return RedirectToAction(nameof(Details));
 		}
 		public new IActionResult SignOut()
 		{
 			
 			return RedirectToAction("Index","Home");
 		}
+
 
 	}
 }
