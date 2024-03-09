@@ -1,29 +1,44 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspNetCore_MVC.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCore_MVC.Controllers
 {
     public class AccountController : Controller
     {
-        public IActionResult Index()
+		//private readonly AccountService _accountService;
+
+		//public AccountController(AccountService accountService)
+		//{
+		//	_accountService = accountService;
+		//}
+
+		[Route("/account")]
+		public IActionResult Details()
         {
-            ViewData["Title"] = "Account Details";
-            return View();
+			var viewModel = new AccountDetailsViewModel();
+			//viewModel.BasicInfo = _accountServices.GetBasicInfo();
+			//viewModel.AdressInfo = _accountServices.GetAdressInfo();
+            return View(viewModel);
         }
-		public IActionResult SignIn()
+
+		[HttpPost]
+		public IActionResult BasicInfo(AccountDetailsViewModel viewModel)
 		{
-			ViewData["Title"] = "Sign In";
-			return View();
+			//_accountServices.SaveBasicInfo(viewModel.BsicInfo);
+			return RedirectToAction(nameof(Details));
 		}
-		public IActionResult SignUp()
+		[HttpPost]
+		public IActionResult AdressInfo(AccountDetailsViewModel viewModel)
 		{
-			ViewData["Title"] = "Sign Up";
-			return View();
+			//_accountServices.SaveAdressInfo(viewModel.AdressInfo);
+			return RedirectToAction(nameof(Details));
 		}
 		public new IActionResult SignOut()
 		{
 			
 			return RedirectToAction("Index","Home");
 		}
+
 
 	}
 }
