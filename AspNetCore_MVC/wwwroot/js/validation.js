@@ -42,13 +42,10 @@ const emailValidator = (element) => {
 //funkar ej, får lenght:0
 const passwordValidator = (element) => {
     if (element.dataset.valEqualtoOther !== undefined) {
-        console.log(element)
-
-        console.log(document.getElementsByName(element.dataset.valEqualtoOther.replace('*', 'Form')))
        
-        let password = document.getElementsByName(element.dataset.valEqualtoOther.replace('*', 'Form'))
+        let password = document.getElementsByName(element.dataset.valEqualtoOther.replace('*', 'SignUpForm'))[0].value
 
-        console.log(password)
+
 
         if (element.value === password)
             formErrorHandler(element, true)
@@ -59,7 +56,7 @@ const passwordValidator = (element) => {
 
     else {
 
-        const regEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!^%*?&]{8,15}$/
+        const regEx = /^((?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])|(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[^a-zA-Z0-9])|(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[^a-zA-Z0-9])|(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^a-zA-Z0-9])).{8,}$/
         formErrorHandler(element, regEx.test(element.value))
     }
 

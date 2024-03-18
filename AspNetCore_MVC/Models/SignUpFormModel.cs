@@ -5,18 +5,22 @@ namespace AspNetCore_MVC.Models;
 
 public class SignUpFormModel
 {
+	[DataType(DataType.Text)]
 	[Display(Name = "First Name", Prompt = "Enter first name", Order = 0)]
 	[Required(ErrorMessage = "First name is required")]
+	[MinLength(2, ErrorMessage = "First name is required")]
 	public string FirstName { get; set; } = null!;
 
+	[DataType(DataType.Text)]
 	[Display(Name = "Last Name", Prompt = "Enter last name", Order = 1)]
 	[Required(ErrorMessage = "Last name is required")]
+	[MinLength(2, ErrorMessage = "Last name is required")]
 	public string LastName { get; set; } = null!;
 
 	[DataType(DataType.EmailAddress)]
 	[Display(Name = "Email adress", Prompt = "Enter email adress", Order = 2)]
 	[Required(ErrorMessage = "Email is required")]
-	[RegularExpression("^([a-zA-Z0-9]+[a-zA-Z0-9._%-]*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,4})$",ErrorMessage ="Your email adress is invalid")]
+	[RegularExpression("^(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$", ErrorMessage ="Your email adress is invalid")]
 	public string Email { get; set; } = null!;
 
 	[DataType(DataType.Password)]
