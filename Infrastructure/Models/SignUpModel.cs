@@ -1,9 +1,9 @@
-﻿using AspNetCore_MVC.Helpers;
+﻿using Infrastructure.Helpers;
 using System.ComponentModel.DataAnnotations;
 
-namespace AspNetCore_MVC.Models;
+namespace Infrastructure.Models;
 
-public class SignUpFormModel
+public class SignUpModel
 {
 	[DataType(DataType.Text)]
 	[Display(Name = "First Name", Prompt = "Enter first name", Order = 0)]
@@ -39,6 +39,4 @@ public class SignUpFormModel
 	[CheckBoxRequired(ErrorMessage = "You must agree to the terms and conditions")]
 	public bool Terms { get; set; } = false;
 
-
 }
-
