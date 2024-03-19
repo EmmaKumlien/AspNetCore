@@ -1,10 +1,10 @@
-﻿using AspNetCore_MVC.Models;
+﻿using Infrastructure.Models;
 
 namespace AspNetCore_MVC.ViewModels;
 
 public class SignUpViewModel
 {
 	public string PageTitle { get; set; } = "Sign Up";
-	public SignUpFormModel SignUpForm { get; set; } = new SignUpFormModel();
+	public SignUpModel SignUpForm { get; set; } = new SignUpModel();
 
 }
