@@ -10,7 +10,8 @@ form {
 
     .checkbox {
         span {
-            display:block;
+            display: block;
+
             &.field-validation-error {
                 position: static;
                 top: 0;
@@ -39,14 +40,14 @@ form {
     }
 
     label {
-        margin-bottom: 3px;
+        margin-bottom: 0.18rem;
         font-weight: 700;
     }
 
     input {
         padding: 1rem;
-        border-radius: 8px !important;
-        border: 1px solid $gray-700;
+        border-radius: 0.5rem !important;
+        border: 0.06rem solid $gray-700;
 
         &::placeholder {
             opacity: 0.7;
@@ -61,6 +62,29 @@ form {
         }
     }
 
+    textarea {
+        padding: 1rem;
+        border-radius: 0.5rem !important;
+        border: 0.3rem solid $gray-400;
+        resize: none;
+        width:100%;
+
+        &::placeholder {
+            opacity: 0.4;
+        }
+
+        &.input-validation-error {
+            border: 0.63rem solid $danger !important;
+            color:$danger;
+
+            &::placeholder{
+                color:$danger;
+            }
+
+        }
+    }
+
+
     span {
         &.field-validation-error {
             position: absolute;
@@ -68,6 +92,16 @@ form {
             right: 0;
             @include text-s;
             color: $danger;
+
+            &::after{
+                position:absolute;
+                right:10px;
+                top:47px;
+                z-index:10;
+                font-size:2em;
+                display:block;
+                content:'\2BBF'
+            }
         }
     }
 }

@@ -21,6 +21,33 @@ public class AuthController : Controller
 		{
 			return View(model);
 		}
-		return RedirectToAction("signIn","Auth");
+		return RedirectToAction("Details","Account");
+	}
+
+	[Route("/signin")]
+	[HttpGet]
+	public IActionResult SignIn()
+	{
+		var viewModel = new SignInViewModel();
+		return View(viewModel);
+	}
+
+
+	[Route("/signin")]
+	[HttpPost]
+	public IActionResult Signin(SignInViewModel model)
+	{
+		if (!ModelState.IsValid)
+		{
+			
+			return View(model);
+		}
+
+		//var result = _authService.SignIn(model.SignIn)
+		//if(result)
+		//return RedirectToAction("Account", "Index");
+
+		model.ErrorMessage = "Incorrect password or email adress";
+		return View(model);
 	}
 }
