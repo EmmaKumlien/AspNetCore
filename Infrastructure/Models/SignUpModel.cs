@@ -1,9 +1,9 @@
-﻿using AspNetCore_MVC.Helpers;
+﻿using Infrastructure.Helpers;
 using System.ComponentModel.DataAnnotations;
 
-namespace AspNetCore_MVC.Models;
+namespace Infrastructure.Models;
 
-public class SignUpFormModel
+public class SignUpModel
 {
 	[Display(Name = "First Name", Prompt = "Enter first name", Order = 0)]
 	[Required(ErrorMessage = "First name is required")]
@@ -16,7 +16,7 @@ public class SignUpFormModel
 	[DataType(DataType.EmailAddress)]
 	[Display(Name = "Email adress", Prompt = "Enter email adress", Order = 2)]
 	[Required(ErrorMessage = "Email is required")]
-	[RegularExpression("^([a-zA-Z0-9]+[a-zA-Z0-9._%-]*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,4})$",ErrorMessage ="Your email adress is invalid")]
+	[RegularExpression("^([a-zA-Z0-9]+[a-zA-Z0-9._%-]*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,4})$", ErrorMessage = "Your email adress is invalid")]
 	public string Email { get; set; } = null!;
 
 	[DataType(DataType.Password)]
@@ -35,6 +35,4 @@ public class SignUpFormModel
 	[CheckBoxRequired(ErrorMessage = "You must agree to the terms and conditions")]
 	public bool Terms { get; set; } = false;
 
-
 }
-
